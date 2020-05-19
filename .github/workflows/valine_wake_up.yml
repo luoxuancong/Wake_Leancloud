@@ -5,7 +5,7 @@ name: valine_wake_up
 
 on:
   schedule:
-    - cron: "*/18 0-15 * * *"
+    - cron: "*/25 0-15,23 * * *"
   push:
     branches: [ master ]
 
@@ -13,9 +13,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
 
     steps:
     - name: Checkout
@@ -32,6 +29,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
 
-    - name: wake_up
+    - name: Wake_up
       run: |
         python main.py
