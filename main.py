@@ -1,5 +1,18 @@
 import requests
 
-r=requests.get(url="https://valine.0941314.xyz/") # 修改为自己的valine后台管理地址
+def get_status(url):
+    
+    r=requests.get(url=url)
 
-print("唤醒成功!")
+    return r.status_code
+
+def main():
+    status=get_status("https://valine.0941314.xyz/")
+
+    if status==200:
+        print("激活成功！")
+    else:
+        print("激活失败！HTTP状态码为：",status)
+
+if __name__ == "__main__":
+    main()
