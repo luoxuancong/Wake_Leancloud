@@ -3,11 +3,11 @@
 
 name: valine_wake_up
 
-on:
-  schedule:
-    - cron: "*/25 0-15,23 * * *"
-  push:
-    branches: [ master ]
+#on:
+#  schedule:
+#    - cron: "*/25 0-15,23 * * *"
+#  push:
+#    branches: [ master ]
 
 jobs:
   build:
